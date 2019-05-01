@@ -1,7 +1,7 @@
 .product-list {
     display: flex;
     flex-wrap: wrap;
-
+    padding: 10px;
 }
 
 .productBox {
@@ -11,11 +11,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 1px solid #dadfea;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 15px;
+    padding: 10px;
+
 }
 
 .productImg {
     max-width: 200px;
     max-height: 200px;
-    /*height: 200px;*/
+}
 
+.productTitle {
+    padding: 5px;
+}
+
+.productPrice {
+    padding: 5px;
+}
+
+.cartBtn {
+    /*margin: 5px;*/
+    /*position: absolute;*/
+    /*bottom: 5px;*/
 }
