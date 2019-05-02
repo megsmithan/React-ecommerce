@@ -1,15 +1,37 @@
 import React from 'react';
+import ax from '../api/api'
+import store from '../store';
 
 class SearchBar extends React.Component {
+    state = {
+        term: '',
+    };
+    onFormSubmit = e => {
+        e.preventDefault();
+        console.log(e);
+        store.dispatch({
+            type: 'SET_FILTER',
+            filter: this.state.term
+        });
+
+    };
+
+    handleChange = e => {
+        this.setState({
+            term: e.target.value
+        })
+    };
+
     render() {
         return(
-            <div className='search-bar ui segment'>
-                <form className='ui form'>
+            <div className='search-bar ui '>
+                <form onSubmit={this.onFormSubmit} className='ui form'>
                     <div className='field'>
-                        <label>Search</label>
                         <input
                             type='text'
-
+                            placeholder='search categories'
+                            value={this.state.term}
+                            onChange={this.handleChange}
                         />
                     </div>
                 </form>

@@ -1,13 +1,23 @@
 import React from 'react';
 import ProductItem from "./ProductItem";
 import './ProductList.css';
+import store from '../store'
 
 
 class ProductsList extends React.Component {
 
 
     renderProductList() {
-        return this.props.products.map((prod, idx) => {
+        console.log(store.getState().filter)
+        const products = store.getState().products.filter(prod => {
+            if (store.getState().filter === prod.category) {
+                return prod;
+            } else if (store.getState().filter === '') {
+                return prod;
+            }
+        });
+
+        return products.map((prod, idx) => {
             return <ProductItem
                 key={idx}
                 img={prod.img}
@@ -25,6 +35,7 @@ class ProductsList extends React.Component {
     }
 }
 
+//store.getState().filter
 
 
 

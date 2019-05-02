@@ -3,27 +3,33 @@ import ax from "../api/api";
 
 import SearchBar from './SearchBar'
 import ProductsList from "./ProductsList";
+import Header from "./Header";
+import store from '../store';
 
 
 class App extends React.Component {
-    state = {
-        products: []
-    };
 
     componentDidMount() {
-        ax.get('/products').then(res => {
-            this.setState({ products: res.data });
-            console.log(this.state.products)
-        });
+        store.subscribe(() => this.forceUpdate());
 
+        ax.get('/products').then(res => {
+            store.dispatch({
+                type: 'SET_PRODUCTS',
+                products: res.data
+            });
+            console.log(store.getState())
+        });
     };
+
 
     render() {
         return (<>
-            <div className='ui container'>
-                <SearchBar />
-            </div>
-            <ProductsList products={this.state.products} />
+            <Header/>
+            {/*<div className='ui container'>*/}
+            {/*    <SearchBar />*/}
+            {/*</div>*/}
+            <SearchBar />
+            <ProductsList />
             </>
         )
     }
