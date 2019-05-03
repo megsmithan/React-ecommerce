@@ -5,6 +5,7 @@ import SearchBar from './SearchBar'
 import ProductsList from "./ProductsList";
 import Header from "./Header";
 import store from '../store';
+import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -13,6 +14,7 @@ class App extends React.Component {
         store.subscribe(() => this.forceUpdate());
 
         ax.get('/products').then(res => {
+            console.log(res)
             store.dispatch({
                 type: 'SET_PRODUCTS',
                 products: res.data
@@ -39,3 +41,6 @@ class App extends React.Component {
 
 
 export default App
+
+//wrap the pages in the switch, within the router. but for the links you want always
+//showing, wrap inside the router but outside the switch

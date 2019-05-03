@@ -14,7 +14,7 @@ class Header extends React.Component {
 
                     <div>
                         {/*<SearchBar submitSearch={} />*/}
-                        <i className="plug icon" />
+                        <i className="shopping cart icon" />
                     </div>
                 </div>
 

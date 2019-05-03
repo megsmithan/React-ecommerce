@@ -1,10 +1,7 @@
 import { createStore } from 'redux';
 
 
-function reducer(state = {
-    products: [],
-    filter: ''
-}, action) {
+function reducer(state, action) {
     switch(action.type) {
         case 'SET_PRODUCTS':
             return {
@@ -21,6 +18,9 @@ function reducer(state = {
     }
 }
 
-const store = createStore(reducer);
+const store = createStore(reducer, {
+    products: [],
+    filter: ''
+});
 
 export default store

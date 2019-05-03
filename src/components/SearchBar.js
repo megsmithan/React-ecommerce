@@ -1,5 +1,5 @@
 import React from 'react';
-import ax from '../api/api'
+
 import store from '../store';
 
 class SearchBar extends React.Component {

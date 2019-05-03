@@ -8,7 +8,7 @@ class ProductsList extends React.Component {
 
 
     renderProductList() {
-        console.log(store.getState().filter)
+        console.log(store.getState().filter);
         const products = store.getState().products.filter(prod => {
             if (store.getState().filter === prod.category) {
                 return prod;
@@ -16,13 +16,13 @@ class ProductsList extends React.Component {
                 return prod;
             }
         });
-
         return products.map((prod, idx) => {
             return <ProductItem
                 key={idx}
                 img={prod.img}
                 title={prod.title}
                 price={prod.price}
+
                 />
         })
     }

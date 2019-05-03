@@ -1,9 +1,15 @@
 import React from 'react';
 
 class AddToCartBtn extends React.Component{
+    onAddCartClick = () => {
+      console.log('yay, you added something to your cart!')
+    };
+
     render() {
         return (
-            <button className='cartBtn'>Add To Cart</button>
+            <div>
+                <i onClick={this.onAddCartClick} className='cartBtn shopping cart icon'/>
+            </div>
         )
     }
 }
@@ -11,3 +17,7 @@ class AddToCartBtn extends React.Component{
 
 
 export default AddToCartBtn
+
+
+
+    /*<button className='cartBtn'>Add To Cart</button>*/
