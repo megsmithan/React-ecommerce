@@ -14,11 +14,14 @@ class ProductItem extends React.Component {
     render() {
         return (
             <div className='productBox'>
-                <img onClick={this.onProductClick}
-                     className='productImg'
-                     alt='product'
-                     src={this.props.img}
-                />
+                <div className='hooverItem'>
+                    <span className='hooverItemText'>View Details</span>
+                    <img onClick={this.onProductClick}
+                         className='productImg'
+                         alt='product'
+                         src={this.props.img}
+                    />
+                </div>
                 <div className='productTitle'>{this.props.title}</div>
                 <div className='productPrice'>{this.props.price}</div>
                 <AddToCartBtn />

@@ -1,5 +1,6 @@
 import React from 'react';
 // import SearchBar from "./SearchBar";
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -7,16 +8,14 @@ class Header extends React.Component {
 
         render() {
         return (
-            <h2 className="ui header">
+            <h2 className="ui secondary pointing menu">
 
-                <div className="content">
-                    Let's shop and spend all our money
+                    <Link to='/' className='item'>Let's shop and spend all our money</Link>
 
-                    <div>
-                        {/*<SearchBar submitSearch={} />*/}
-                        <i className="shopping cart icon" />
+                    <div className='right menu'>
+                        <Link to='/cart' className='item'><i className="shopping cart icon" /></Link>
                     </div>
-                </div>
+
 
             </h2>
         )

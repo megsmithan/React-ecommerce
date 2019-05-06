@@ -22,7 +22,7 @@
 .productImg {
     max-width: 200px;
     max-height: 200px;
-    /*cursor: pointer;*/
+    cursor: pointer;
 }
 
 .productTitle {
@@ -40,4 +40,49 @@
     /*margin: 5px;*/
     /*position: absolute;*/
     /*bottom: 5px;*/
+    cursor: pointer;
 }
+
+.hoverItem {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.hooverItem .hooverItemText {
+    /*visibility: hidden;*/
+    width: 120px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+.hooverItem:hover .hoverItemText {
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

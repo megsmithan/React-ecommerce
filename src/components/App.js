@@ -1,11 +1,13 @@
 import React from 'react';
 import ax from "../api/api";
+import { BrowserRouter, Route } from 'react-router-dom'
+
 
 import SearchBar from './SearchBar'
 import ProductsList from "./ProductsList";
 import Header from "./Header";
+import Cart from './Cart';
 import store from '../store';
-import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom'
 
 
 class App extends React.Component {
@@ -25,14 +27,17 @@ class App extends React.Component {
 
 
     render() {
-        return (<>
-            <Header/>
-            {/*<div className='ui container'>*/}
-            {/*    <SearchBar />*/}
-            {/*</div>*/}
-            <SearchBar />
-            <ProductsList />
-            </>
+        return (
+            <div className='ui container'>
+                <BrowserRouter>
+                    <div>
+                        <Header />
+                        <Route path='/' exact component={ProductsList} />
+                        <Route path='/cart' exact component={Cart} />
+                    </div>
+                </BrowserRouter>
+                {/*<ProductsList />*/}
+            </div>
         )
     }
 }
