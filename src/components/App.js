@@ -17,12 +17,12 @@ class App extends React.Component {
         store.subscribe(() => this.forceUpdate());
 
         ax.get('/products').then(res => {
-            console.log(res)
+            // console.log(res)
             store.dispatch({
                 type: 'SET_PRODUCTS',
                 products: res.data
             });
-            console.log(store.getState())
+            // console.log(store.getState())
         });
     };
 

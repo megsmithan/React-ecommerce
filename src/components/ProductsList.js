@@ -2,7 +2,7 @@ import React from 'react';
 import ProductItem from "./ProductItem";
 // import './ProductList.css';
 import store from '../store'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 class ProductsList extends React.Component {
