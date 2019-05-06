@@ -13,19 +13,49 @@ class ProductItem extends React.Component {
     };
     render() {
         return (
-            <div className='productBox'>
-                <div className='hooverItem'>
-                    <span className='hooverItemText'>View Details</span>
-                    <img onClick={this.onProductClick}
-                         className='productImg'
-                         alt='product'
-                         src={this.props.img}
-                    />
+            <div className='ui special cards four wide column'>
+                <div className='card'>
+
+                    <div className='blurring dimmable image'>
+                        <div className='ui inverted dimmer'>
+                            <div className='content'>
+                                <div className='center'>
+                                    <div className='ui inverted button'>View Details</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img onClick={this.onProductClick}
+                             className='productImg'
+                             alt='product'
+                             src={this.props.img}
+                        />
+                    </div>
+
+                    <div className='content'>
+                        <div className='header'>{this.props.title}</div>
+                        <div className='date'>{this.props.price}</div>
+                    </div>
+
+                    <div className='extra content'>
+                        <AddToCartBtn />
+                    </div>
+
                 </div>
-                <div className='productTitle'>{this.props.title}</div>
-                <div className='productPrice'>{this.props.price}</div>
-                <AddToCartBtn />
             </div>
+
+            // <div className='productBox'>
+            //     <div className='hooverItem'>
+            //         <span className='hooverItemText'>View Details</span>
+            //         <img onClick={this.onProductClick}
+            //              className='productImg'
+            //              alt='product'
+            //              src={this.props.img}
+            //         />
+            //     </div>
+            //     <div className='productTitle'>{this.props.title}</div>
+            //     <div className='productPrice'>{this.props.price}</div>
+            //     <AddToCartBtn />
+            // </div>
         )
     }
 }

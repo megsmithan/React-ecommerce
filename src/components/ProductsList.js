@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from "./ProductItem";
-import './ProductList.css';
+// import './ProductList.css';
 import store from '../store'
 import { Link } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ class ProductsList extends React.Component {
 
     render() {
         return (
-            <div className='product-list'>
+            <div className='ui grid'>
                 <Link to='/'>{this.renderProductList()}</Link>
             </div>
         )
