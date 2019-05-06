@@ -3,11 +3,12 @@ import ax from "../api/api";
 import { BrowserRouter, Route } from 'react-router-dom'
 
 
-import SearchBar from './SearchBar'
+// import SearchBar from './SearchBar'
 import ProductsList from "./ProductsList";
 import Header from "./Header";
 import Cart from './Cart';
 import store from '../store';
+import ProductDetails from "./ProductDetails";
 
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
                     <div>
                         <Header />
                         <Route path='/' exact component={ProductsList} />
+                        <Route path='/details/:productId' exact component={ProductDetails} />
                         <Route path='/cart' exact component={Cart} />
                     </div>
                 </BrowserRouter>

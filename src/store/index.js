@@ -13,6 +13,10 @@ function reducer(state, action) {
                 ...state,
                 filter: action.filter
             };
+        case 'GET_DETAILS':
+            return {
+                details: action.details,
+            }
         default:
             return state
     }

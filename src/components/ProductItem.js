@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import AddToCartBtn from './AddToCartBtn';
+// import ProductDetails from "./ProductDetails";
 // import store from '../store';
 
 class ProductItem extends React.Component {
@@ -8,12 +10,18 @@ class ProductItem extends React.Component {
     //     console.log(store.getState().products)
     // }
 
-    onProductClick = () => {
-        console.log('yay! you clicked on an item')
-    };
+    // onProductClick = () => {
+    //     console.log('yay! you clicked on an item');
+    //     return (
+    //         <Link to='/details'>Product Details</Link>
+    //         )
+    //
+    // };
+
     render() {
         return (
             <div className='ui special cards four wide column'>
+
                 <div className='card'>
 
                     <div className='blurring dimmable image'>
@@ -24,10 +32,12 @@ class ProductItem extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <img onClick={this.onProductClick}
+                        <img
+                            // onClick={this.onProductClick}
                              className='productImg'
                              alt='product'
                              src={this.props.img}
+
                         />
                     </div>
 
@@ -38,10 +48,13 @@ class ProductItem extends React.Component {
 
                     <div className='extra content'>
                         <AddToCartBtn />
+                        <Link to={`/details/${this.props.id}`}>view details</Link>
                     </div>
 
                 </div>
             </div>
+
+
 
             // <div className='productBox'>
             //     <div className='hooverItem'>

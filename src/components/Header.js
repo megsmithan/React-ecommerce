@@ -1,5 +1,5 @@
 import React from 'react';
-// import SearchBar from "./SearchBar";
+import SearchBar from "./SearchBar";
 import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
@@ -9,14 +9,13 @@ class Header extends React.Component {
         render() {
         return (
             <h2 className="ui secondary pointing menu">
-
-                    <Link to='/' className='item'>Let's shop and spend all our money</Link>
-
-                    <div className='right menu'>
-                        <Link to='/cart' className='item'><i className="shopping cart icon" /></Link>
-                    </div>
-
-
+                <Link to='/' className='item'><i className='home icon' /></Link>
+                <div className='right menu'>
+                    <SearchBar />
+                </div>
+                <div className='right menu'>
+                    <Link to='/cart' className='item'><i className="shopping cart icon" /></Link>
+                </div>
             </h2>
         )
     }
