@@ -33,7 +33,9 @@ class App extends React.Component {
                 <BrowserRouter>
                     <div>
                         <Header />
+
                         <Route path='/' exact component={ProductsList} />
+
                         <Route path='/details/:productId' exact component={ProductDetails} />
                         <Route path='/cart' exact component={Cart} />
                     </div>

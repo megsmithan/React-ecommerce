@@ -1,26 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import AddToCartBtn from './AddToCartBtn';
+import Cart from './Cart'
 // import ProductDetails from "./ProductDetails";
-// import store from '../store';
+import store from '../store';
 
 class ProductItem extends React.Component {
-    // componentWillMount() {
-    //     console.log(store.getState().products)
-    // }
 
-    // onProductClick = () => {
-    //     console.log('yay! you clicked on an item');
-    //     return (
-    //         <Link to='/details'>Product Details</Link>
-    //         )
-    //
-    // };
+    onAddCartClick = (product) => {
+        const cart = store.getState().products.filter(item => {
+            if (item.id === product.id) {
+                return item
+            }
+
+        });
+        return cart.map((item, idx) => {
+            console.log('yay, you added something to your cart!', product);
+            return <Cart {...item} />
+        })
+     };
+
 
     render() {
         return (
-            <div className='ui special cards four wide column'>
+            <div className='ui special cards'>
 
                 <div className='card'>
 
@@ -47,28 +50,19 @@ class ProductItem extends React.Component {
                     </div>
 
                     <div className='extra content'>
-                        <AddToCartBtn />
-                        <Link to={`/details/${this.props.id}`}>view details</Link>
+                        <span>
+                            <Link to={`/details/${this.props.id}`}>view details</Link>
+                        </span>
+                        <span className='right floated'>
+                            <Link to='/cart'><i onClick={() => this.onAddCartClick(this.props)} className='cartBtn shopping cart icon'/></Link>
+                        </span>
                     </div>
 
                 </div>
             </div>
 
+            // <i onClick={() => this.onAddCartClick(this.props.id)} className='cartBtn shopping cart icon'/>
 
-
-            // <div className='productBox'>
-            //     <div className='hooverItem'>
-            //         <span className='hooverItemText'>View Details</span>
-            //         <img onClick={this.onProductClick}
-            //              className='productImg'
-            //              alt='product'
-            //              src={this.props.img}
-            //         />
-            //     </div>
-            //     <div className='productTitle'>{this.props.title}</div>
-            //     <div className='productPrice'>{this.props.price}</div>
-            //     <AddToCartBtn />
-            // </div>
         )
     }
 }
@@ -81,28 +75,6 @@ export default ProductItem
 
 
 
-
-// import React from 'react';
-//
-// import AddToCartBtn from './AddToCartBtn';
-//
-//
-//
-//
-//
-// const ProductItem = props => {
-//     return (
-//         <div className='productBox'>
-//             <img className='productImg' alt='product item' src={props.img} />
-//             <div className='productTitle'>{props.title}</div>
-//             <div className='productPrice'>{props.price}</div>
-//             <AddToCartBtn />
-//         </div>
-//     )
-// };
-//
-//
-// export default ProductItem
 
 
 
