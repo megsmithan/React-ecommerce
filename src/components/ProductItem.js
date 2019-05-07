@@ -8,18 +8,12 @@ import store from '../store';
 class ProductItem extends React.Component {
 
     onAddCartClick = (product) => {
-        const cart = store.getState().products.filter(item => {
-            if (item.id === product.id) {
-                return item
-            }
-
-        });
-        return cart.map((item, idx) => {
-            console.log('yay, you added something to your cart!', product);
-            return <Cart {...item} />
+        store.dispatch({
+            type: 'ADD_PRODUCT_CART',
+            product: product
         })
-     };
 
+     };
 
     render() {
         return (

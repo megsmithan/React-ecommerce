@@ -13,10 +13,11 @@ function reducer(state, action) {
                 ...state,
                 filter: action.filter
             };
-        case 'GET_DETAILS':
+        case 'ADD_PRODUCT_CART':
             return {
-                details: action.details,
-            }
+                ...state,
+                cart: state.cart.concat(action.product),
+            };
         default:
             return state
     }
@@ -24,7 +25,8 @@ function reducer(state, action) {
 
 const store = createStore(reducer, {
     products: [],
-    filter: ''
+    filter: '',
+    cart: []
 });
 
 export default store
