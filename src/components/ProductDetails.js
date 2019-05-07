@@ -1,5 +1,6 @@
 import React from 'react'
 import store from '../store'
+import './ProductDetails.css'
 
 class ProductDetails extends React.Component {
     state = {
@@ -17,11 +18,18 @@ class ProductDetails extends React.Component {
     renderProduct() {
         return this.state.product.map((prod, idx) => {
             return (
-                <div key={idx}>
-                    <div>{prod.title}</div>
-                    <div>{prod.price}</div>
+                <div className='detailsBox' key={idx}>
+                    <div className='detailsTitle'>{prod.title}</div>
+                    <div className='detailsPrice'>{prod.price}</div>
                     <img src={prod.img} alt='product' width={200} />
-                    <div>{prod.description}</div>
+                    <div className='detailsDescription'>{prod.description}</div>
+                    {/*<div className='detailsRating'>{prod.rating}</div>*/}
+                    <div className="ui vertical animated button btnBox" tabIndex="0">
+                        <div className="hidden content">Add To Cart</div>
+                        <div className="visible content">
+                            <i className="shop icon"/>
+                        </div>
+                    </div>
                 </div>
             )
         })

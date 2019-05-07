@@ -1,0 +1,39 @@
+.detailsBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+.detailsBox img {
+    max-width: 400px;
+    max-height: 300px;
+    margin: auto;
+    /*padding: 20px;*/
+}
+.detailsTitle {
+    font-size: 25px;
+    padding: 5px;
+    text-align: center;
+}
+.detailsPrice {
+    text-align: center;
+    margin: 15px;
+}
+.detailsDescription {
+    margin-top: 15px;
+
+}
+/*.btnBox {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+.ui.button {
+    background: #E4EAEB;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}

@@ -26,7 +26,7 @@ import './Cart.css'
 
 class Cart extends React.Component {
     renderCart = () => {
-        // console.log(store.getState().cart);
+        console.log(store.getState().cart);
         return store.getState().cart.map((item, idx) => {
             return (
                 <div className='cartItemBox' key={idx}>
