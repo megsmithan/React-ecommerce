@@ -1,37 +1,26 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import store from '../store'
-
 import './Cart.css'
 
-
-
-// const Cart = () => {
-//     return (
-//         <div>{store.getState().cart.map((item, idx) => {
-//             return(
-//                 <div className='ui cards' key={idx}>
-//                     <div className='card'>
-//                         <div className='content'>
-//                             <span><i className='trash alternate icon' /></span>
-//                             <span className='header'>{item.title}</span>
-//                             <span className='right floated'>{item.price}</span>
-//                         </div>
-//                     </div>
-//                 </div>
-//             )
-//         })}</div>
-//     )
-// };
-
-
 class Cart extends React.Component {
+    onDeleteClick = (id) => {
+        // console.log('yay! you deleted something from your cart', id);
+        store.dispatch({
+            type: 'DELETE_PRODUCT_CART',
+            id: id
+        });
+
+    };
+
+
     renderCart = () => {
-        console.log(store.getState().cart);
+        // console.log(store.getState().cart);
         return store.getState().cart.map((item, idx) => {
             return (
                 <div className='cartItemBox' key={idx}>
                     <div>
-                        <i className='trash alternate icon deleteIcon' />
+                        <i onClick={() => this.onDeleteClick(item.id)} className='trash alternate icon deleteIcon' />
                         <span>{item.title}</span>
                     </div>
                     <div>${item.price}</div>
@@ -58,7 +47,7 @@ class Cart extends React.Component {
                 <h3 className='cartHeader'>Your Cart</h3>
                 <div>{this.renderCart()}</div>
                 <div>{this.renderTotal()}</div>
-                <div className='checkOutBtn'><button className='ui button'>Check Out</button></div>
+                <div className='checkOutBtn'><Link to='/order/confirmation>'><button className='ui button'>Check Out</button></Link></div>
             </div>
         )
     }

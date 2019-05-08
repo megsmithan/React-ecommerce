@@ -9,6 +9,7 @@ import Header from "./Header";
 import Cart from './Cart';
 import store from '../store';
 import ProductDetails from "./ProductDetails";
+import OrderConfirm from './OrderConfirm';
 
 
 class App extends React.Component {
@@ -38,6 +39,7 @@ class App extends React.Component {
 
                         <Route path='/details/:productId' exact component={ProductDetails} />
                         <Route path='/cart' exact component={Cart} />
+                        <Route path='/order/confirmation' extact component={OrderConfirm} />
                     </div>
                 </BrowserRouter>
                 {/*<ProductsList />*/}
