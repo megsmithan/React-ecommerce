@@ -47,7 +47,7 @@ class Cart extends React.Component {
                 <h3 className='cartHeader'>Your Cart</h3>
                 <div>{this.renderCart()}</div>
                 <div>{this.renderTotal()}</div>
-                <div className='checkOutBtn'><Link to='/order/confirmation>'><button className='ui button'>Check Out</button></Link></div>
+                <div className='checkOutBtn'><Link to='/order/confirmation'><button className='ui button'>Confirm Purchase</button></Link></div>
             </div>
         )
     }

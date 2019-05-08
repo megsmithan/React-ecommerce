@@ -43,7 +43,9 @@ class App extends React.Component {
                     </div>
                 </BrowserRouter>
                 {/*<ProductsList />*/}
+                <footer>le</footer>
             </div>
+
         )
     }
 }
