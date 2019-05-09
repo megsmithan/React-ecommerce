@@ -26,7 +26,7 @@ class ProductItem extends React.Component {
                              className='productImg'
                              alt='product'
                              src={this.props.img}
-                             height={200}
+                             style={{maxHeight:170}}
                         />
                     </div>
 
