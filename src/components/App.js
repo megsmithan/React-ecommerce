@@ -1,6 +1,7 @@
 import React from 'react';
 import ax from "../api/api";
 import { BrowserRouter, Route } from 'react-router-dom'
+import './App.css'
 
 
 // import SearchBar from './SearchBar'
@@ -10,6 +11,7 @@ import Cart from './Cart';
 import store from '../store';
 import ProductDetails from "./ProductDetails";
 import OrderConfirm from './OrderConfirm';
+
 
 
 class App extends React.Component {
@@ -30,20 +32,23 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className='ui container'>
+            <div >
                 <BrowserRouter>
-                    <div>
+                    <div className='mainContainer'>
                         <Header />
+                        <div className='middleContainer'>
 
-                        <Route path='/' exact component={ProductsList} />
+                            <Route path='/' exact component={ProductsList} />
 
-                        <Route path='/details/:productId' exact component={ProductDetails} />
-                        <Route path='/cart' exact component={Cart} />
-                        <Route path='/order/confirmation' extact component={OrderConfirm} />
+                            <Route path='/details/:productId' exact component={ProductDetails} />
+                            <Route path='/cart' exact component={Cart} />
+                            <Route path='/order/confirmation' extact component={OrderConfirm} />
+                        </div>
+
                     </div>
                 </BrowserRouter>
-                {/*<ProductsList />*/}
-                <footer>le</footer>
+
+                <div className='footer'><p>© 2019 Let's shop and spend all our money</p></div>
             </div>
 
         )

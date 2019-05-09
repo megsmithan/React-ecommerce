@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from "./ProductItem";
-// import './ProductList.css';
+import './ProductList.css';
 import store from '../store'
 // import { Link } from 'react-router-dom';
 
@@ -28,8 +28,8 @@ class ProductsList extends React.Component {
 
     render() {
         return (
-            <div className='ui grid'>
-                <div>{this.renderProductList()}</div>
+            <div className='ui stackable four column grid'>
+                {this.renderProductList()}
             </div>
         )
     }
