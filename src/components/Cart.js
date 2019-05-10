@@ -5,17 +5,13 @@ import './Cart.css'
 
 class Cart extends React.Component {
     onDeleteClick = (id) => {
-        // console.log('yay! you deleted something from your cart', id);
         store.dispatch({
             type: 'DELETE_PRODUCT_CART',
             id: id
         });
 
     };
-
-
     renderCart = () => {
-        // console.log(store.getState().cart);
         return store.getState().cart.map((item, idx) => {
             return (
                 <div className='cartItemBox' key={idx}>
@@ -40,7 +36,6 @@ class Cart extends React.Component {
             </div>
         )
     };
-
     render() {
         return (
             <div>
@@ -52,8 +47,6 @@ class Cart extends React.Component {
         )
     }
 }
-
-
 
 
 export default Cart

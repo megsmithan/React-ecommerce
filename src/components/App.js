@@ -3,8 +3,6 @@ import ax from "../api/api";
 import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css'
 
-
-// import SearchBar from './SearchBar'
 import ProductsList from "./ProductsList";
 import Header from "./Header";
 import Cart from './Cart';
@@ -14,7 +12,6 @@ import OrderConfirm from './OrderConfirm';
 
 
 class App extends React.Component {
-
     componentDidMount() {
         store.subscribe(() => this.forceUpdate());
 
@@ -24,11 +21,8 @@ class App extends React.Component {
                 type: 'SET_PRODUCTS',
                 products: res.data
             });
-            // console.log(store.getState())
         });
     };
-
-
     render() {
         return (
             <div >
@@ -55,9 +49,4 @@ class App extends React.Component {
 }
 
 
-
-
 export default App
-
-//wrap the pages in the switch, within the router. but for the links you want always
-//showing, wrap inside the router but outside the switch

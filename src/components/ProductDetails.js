@@ -8,7 +8,6 @@ class ProductDetails extends React.Component {
         product: []
     };
     componentDidMount() {
-        // console.log(this.props.match.params.productId)
         this.setState({
             product: store.getState().products.filter(product => {
                 return product.id === Number(this.props.match.params.productId)
@@ -53,10 +52,5 @@ class ProductDetails extends React.Component {
 }
 
 
-
-
 export default ProductDetails
 
-
-
-// {this.props.match.params.productId}

@@ -1,6 +1,6 @@
 import React from 'react';
-
 import store from '../store';
+
 
 class SearchBar extends React.Component {
     state = {
@@ -15,13 +15,11 @@ class SearchBar extends React.Component {
         });
         this.setState({term: ''})
     };
-
     handleChange = e => {
         this.setState({
             term: e.target.value
         });
     };
-
     render() {
         return(
             <div className='search-bar ui '>
@@ -39,8 +37,6 @@ class SearchBar extends React.Component {
         )
     }
 }
-
-
 
 
 
