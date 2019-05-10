@@ -13,14 +13,13 @@ class SearchBar extends React.Component {
             type: 'SET_FILTER',
             filter: this.state.term
         });
-
+        this.setState({term: ''})
     };
 
     handleChange = e => {
         this.setState({
             term: e.target.value
         });
-        e.target.value = ''
     };
 
     render() {
