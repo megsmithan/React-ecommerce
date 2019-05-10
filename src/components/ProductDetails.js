@@ -28,7 +28,7 @@ class ProductDetails extends React.Component {
                 <div className='detailsBox' key={idx}>
                     <div className='detailsTitle'>{prod.title}</div>
                     <div className='detailsPrice'>{prod.price}</div>
-                    <img src={prod.img} alt='product' width={200} />
+                    <img src={prod.img} alt='product' style={{maxHeight:300}} />
                     <div className='detailsDescription'>{prod.description}</div>
                     {/*<div className='detailsRating'>{prod.rating}</div>*/}
                     <div className="ui vertical animated button btnBox" tabIndex="0">

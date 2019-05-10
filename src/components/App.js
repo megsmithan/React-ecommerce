@@ -13,7 +13,6 @@ import ProductDetails from "./ProductDetails";
 import OrderConfirm from './OrderConfirm';
 
 
-
 class App extends React.Component {
 
     componentDidMount() {
